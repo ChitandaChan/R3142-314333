@@ -2,9 +2,9 @@ import java.util.Objects;
 
 public class Mesto {
     public String Pozition;
-    public int count;
+    private int count;
     public Mesto(String Pozition) {
-     this.Pozition=Pozition;
+     this.Pozition=Pozition; count = Count.BomszKorotishkacount;
     }
     public String mestnost() {
         return Pozition;
@@ -12,9 +12,9 @@ public class Mesto {
 
     @Override
     public String toString() {
-        return "Mesto{" +
-                "Pozition='" + Pozition + '\'' +
-                ", count=" + count +
+        return "Место{" +
+                "Позиция='" + Pozition + '\'' +
+                ", счетчик=" + count +
                 '}';
     }
 
@@ -29,6 +29,6 @@ public class Mesto {
 
     @Override
     public int hashCode() {
-        return Objects.hash(Pozition, count);
+         return (count<<2)*(count<<2)-5;
     }
 }

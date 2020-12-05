@@ -1,8 +1,9 @@
 public class Money {
     public void Up() {
-        System.out.print(" заработает Денег");
+        System.out.print(" заработает немного Денег");
     }
     public void Down() {
-        System.out.print("  потрати деньги");
+        System.out.print("  потратит немного деньги");
     }
+
 }

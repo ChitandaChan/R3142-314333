@@ -4,20 +4,21 @@ public class BallFlyMan implements ShotMan {
     private String name;
     public int count;
     public BallFlyMan(String name) {
-        this.name=name;
+        this.name=name; count =  Count.getBomszKorotishkacount();
     }
     public String getName() {
         return name;
     }
     public void shootong() {
-        System.out.println(getName()+" кидает мяч");
+        System.out.print(getName()+" кидает мяч");
     }
+    public  void PowerShooting() {System.out.println(" с такой силой ");}
 
     @Override
     public String toString() {
-        return "BallFlyMan{" +
-                "name='" + name + '\'' +
-                ", count=" + count +
+        return "Кидающий мяч{" +
+                "имя='" + name + '\'' +
+                ", счетчик=" + count +
                 '}';
     }
 
@@ -32,6 +33,6 @@ public class BallFlyMan implements ShotMan {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, count);
+        return (count<<2)*(count<<2)+(count<<2)*(count<<2);
     }
 }

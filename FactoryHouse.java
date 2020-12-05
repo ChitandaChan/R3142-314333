@@ -1,4 +1,7 @@
+import java.util.Arrays;
+
 public class FactoryHouse {
+    private int count;
     String[] ff = new String[] {"черного","белого","красного","синего"};
    public void Generations() {
        System.out.print("Улица состоит из :") ;
