@@ -5,6 +5,7 @@ abstract class AbstractKorotishka {
     public void AbstractKorotiska(String name, int eye, String WORK) {
         
     }
+ public abstract void Go();
     public abstract void Say();
  public abstract void cry();
  public abstract void dodge();
@@ -16,13 +17,4 @@ abstract class AbstractKorotishka {
  public abstract void Zenki();
  public abstract void smile();
  public abstract  void see();
-    public abstract  void Hand();
-    public abstract  void Dodge();
-    public abstract  void say();
-    public abstract  void calculaited();
-    public abstract  void sad();
-    public abstract  void seek();
-    public abstract  void attention();
-    public abstract  void health();
-
 }

@@ -1,41 +1,14 @@
-import java.util.Objects;
-
 public class Ball {
-    private String name;
-    private int count;
-    public Ball(String name){
-        this.name=name;
-        count =  Count.getBomszKorotishkacount();
-    }
-    public void Fly() {
-        System.out.println(" мяч летит");
+    public void Fly(String target) {
+        System.out.println(" мяч летит в "+ target);
     }
     public void Punch() {
-        System.out.println("Удар пришелся по другому глазу");
+        System.out.println("Мяч попадает в цель");
     }
-
-    public String getName() {
-        return name;
+    public  String getBall() {
+        return  " мяч";
     }
-
-    @Override
-    public String toString() {
-        return "мяч{" +
-                "имя='" + name + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Ball ball = (Ball) o;
-        return Objects.equals(name, ball.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return (count<<2)*(count<<2);
+    public void input() {
+        System.out.println(getBall());
     }
 }
-

@@ -2,35 +2,27 @@ import java.util.Objects;
 
 public class Fingal {
     public int glaz;
-    private int count;
-    public String conition;
-    public Fingal(int glaz, String condition) {
+    public Fingal(int glaz) {
         this.glaz=glaz;
-        this.conition=condition;
-        count =  Count.getCountWorkKorotishka();
     }
-    public String buetiful() {
-        return " у него красовался ";
-    }
-    public void Fingal() {
+
+
+    public void sost(String High) {
         if (glaz==1) {
-            System.out.println(" Под глазом"+buetiful()+ "Большой синяк");
+            System.out.println(" Под глазом красовался "+ High);
         }
         if (glaz==0) {
-            System.out.println("Большие синяки под глазами");
+            System.out.println("Удар пришелся по другому глазу");
         }
         if (glaz==2) {
             System.out.println("нет синяков");
         }
-
     }
-   public String glaz() {
-        return conition + " глаз";
-   }
+
     @Override
     public String toString() {
-        return "FФингал{" +
-                "глаз=" + glaz +
+        return "Fingal{" +
+                "glaz=" + glaz +
                 '}';
     }
 
@@ -44,6 +36,6 @@ public class Fingal {
 
     @Override
     public int hashCode() {
-        return (count<<2)*(count<<2)+(glaz<<1);
+        return Objects.hash(glaz);
     }
 }

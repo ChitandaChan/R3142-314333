@@ -1,52 +1,66 @@
+import sun.font.TrueTypeFont;
+
 public class Main {
     public static void main(String[] args) {
         BomzhKorotiska Neznayka= new BomzhKorotiska("Незнайка", 2, Mestoimenie.ИМЯ);
         BomzhKorotiska Kozlik= new BomzhKorotiska("Козлик", 2, Mestoimenie.ИМЯ);
-        Balagan balagan= new Balagan ("Закрыт", "Веселый балаганчик");
-        WorkKorotishka Korotishka= new WorkKorotishka("Коротышка", 1, Time.вчерашний);
+        Balagan balagan= new Balagan ("Закрыт", "Веселый балаган");
+        WorkKorotishka Korotishka= new WorkKorotishka("Коротышка", 1, Time.Вчерашний, true, true);
         BallFlyMan NN= new BallFlyMan("Кто-то");
-        Ball ball= new Ball("мяч");
-        FactoryHouse zavod =new FactoryHouse();
+        Ball ball= new Ball();
+        Hause hause = new Hause("знакомое увесилительное здание ", Pozition.Рядом);
+        Problem problem = new Problem(false);
+        Mesto mesto = new Mesto("улица");
+        Money money = new Money("там", "деньги");
+        Search search= new Search("их поиски", "не увенчались упехом");
+        Day day = new Day("в этот День");
+        Arbeit work = new Arbeit("работа");
         Neznayka.setSos(Mestoimenie.ОНИ);
-        Neznayka.search();
-        Neznayka.seek();
+        Neznayka.search("снова");
+        work.vName();
+        day.intName();
+        search.search();
         //Kozlik.setSos(Mestoimenie.ОН);
         Kozlik.Say();
         balagan.OPEN();
+        money.Up();
         Neznayka.stay();
+        mesto.input();
+        hause.location();
+        Korotishka.stay();
+        mesto.Pozition="Помостье";
+        mesto.input();
+        System.out.println("");
         Neznayka.see();
-        zavod.Generations();
-        Neznayka.see();
-    Korotishka.Sostoyanie();
-    Korotishka.health();
-    Korotishka.stay();
-    Korotishka.DODGE();
-        Korotishka.Zenki();
-        Korotishka.attention();
+        Korotishka.dodge();
+        ball.Fly("лицо");
+        Korotishka.zenki();
+        Korotishka.attention(false);
+        problem.fullState("подобные ");
         while (Korotishka.getEye() >0) {
             Double a= Math.random();
             if (a> 0.5) {
-                NN.shootong();
-                ball.Fly();
-                WorkKorotishka.dodge(Korotishka);
+                NN.shootong(false, "");
+                ball.Fly("коротышка");
+                Korotishka.dodge();
+                ball.input();
             } else {
-                Kozlik.calculation();
-                NN.shootong();
-                NN.PowerShooting();
+                Kozlik.payment(true);
+                NN.shootong(true, "действительно скоро");
                 Korotishka.nododge();
-                ball.Punch();
                 Korotishka.setEye(Korotishka.getEye()-1);
-                Korotishka.Zenki();
-                Korotishka.Hand();
-                Korotishka.cry();
+                Korotishka.zenki();
+                Korotishka.grabHand("подбитый глаз");
+                Korotishka.cry("боль");
             }
         }
+        Korotishka.name="Бедняга";
         Korotishka.see();
-        Korotishka.Run();
+        Korotishka.run("дом", "поскорей");
+        Korotishka.name="Несчастный коротышка";
         Kozlik.sad();
+        Korotishka.input();
         Kozlik.smile();
-        //System.out.println(Neznayka.hashCode());
-        //Neznayka.toString();
-        //Neznayka.equals(Kozlik);
+        money.earn();
     }
 }

@@ -11,5 +11,4 @@ public class Count {
         countWorkKorotishka++;
         return countWorkKorotishka-1;
     }
-
 }

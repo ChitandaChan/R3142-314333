@@ -1,21 +1,23 @@
 import java.util.Objects;
 
 public class WorkKorotishka implements DodgeMan, Witness, Stand {
-    private String name;
+    public String name;
     private int eye;
     private int count;
-    private Time time;
-
-    public WorkKorotishka(String name, int eye, Time time) {
-        this.eye = eye;
-        this.name = name;
-        this.time = time;
+    public Time time;
+    private Boolean health;
+    private Boolean state;
+    public WorkKorotishka(String name, int eye, Time time, Boolean health, Boolean state) {
+        this.eye=eye;
+        this.name=name;
+        this.time=time;
+        this.health=health;
         count = Count.getCountWorkKorotishka();
     }
     public String getName() {
         return this.name;
     }
-    public Time getTime()  {return time;}
+    public Time getTime() { return  this.time;}
     public int getEye() {
         return eye;
     }
@@ -23,64 +25,60 @@ public class WorkKorotishka implements DodgeMan, Witness, Stand {
     public void setEye(int eye) {
         this.eye = eye;
     }
-    public void dodge() {
-System.out.println(getName()+ "уворачивается");
-    }
 
     public void see () {
         if (this.eye > 0) {
             System.out.println(getName()+" видит мяч");
         }
         if (this.eye == 0) {
-            System.out.print(getName()+" невзвидя света");
+            System.out.println(getName()+" невзвидет света");
         }
     }
-    public void Sostoyanie() {
-        System.out.print(getTime()+" "+ getName());
-    }
-    public static void dodge(WorkKorotishka workKorotishka) {
-        System.out.println(workKorotishka.getName()+" Увернулся");
+    public void dodge() {
+        System.out.print(getName()+" уворачивается от ");
     }
     public void nododge() {
        System.out.println(getName()+" не успел увернуться");
     }
     public void stay() {
-        Mesto mesto = new Mesto("помостье");
-        mesto.mestnost();
-        System.out.print(" стоит на " + mesto.mestnost());
+        System.out.print(getTime()+" "+getName()+" "+hp()+"и уже стоит на ");
     }
-    public void cry() {
-        System.out.println(" заливается слезами от боли");
+    public void cry(String cause ) {
+        System.out.println(" заливаясь слезами от "+ cause);
     }
-    public void Run() {
-        Balagan home =new Balagan(" открыто", "домой");
-        System.out.println(" побежал поскорее "+ home.getName());
+    public void run(String place, String state) {
+        System.out.println(getName()+" побежал"+" "+ state+ " "+ place);
     }
-    public void Zenki() {
-        Fingal oko =new Fingal(this.eye, "подбитый");
-        oko.Fingal();
+    public void zenki() {
+        Fingal oko =new Fingal(this.eye);
+        oko.sost("большой синяк");
+
     }
-    public void health() {
-        System.out.print(" выздоровел и уже ");
+    public  void input() {
+        System.out.println(" "+getName());
     }
-    public  void DODGE() {
-        Ball ball =new Ball("мячей");
-        System.out.println(" увертываясь от летевших в лицо "+ball.getName());
+    public String hp() {
+        if (health == true) {
+            return " выздоровел ";
+        } else {
+            return" не выздоровел ";
+        }
     }
-    public void attention(){
-        Nothing nothing=new Nothing(" подобные пустяки");
-        System.out.print(getName()+" по-видимому привык ");
-        nothing.Attention();
+    public void grabHand(String place) {
+        System.out.print("схватившись рукой за "+ place);
     }
-    public void Hand() {
-        Fingal oko =new Fingal(this.eye, "подбитый");
-        System.out.print(getName()+ " схватился рукой за " +oko.glaz());
+    public void attention(Boolean chance) {
+        if (chance == true) {
+            System.out.print(getName() + " привык обращать внимание на ");
+        } else {
+            System.out.print(getName() + " привык не обращать внимание на ");
+        }
     }
     @Override
     public String toString() {
-        return "Рабочий коротышка{" +
-                "имя='" + name + '\'' +
-                ", глаз=" + eye +
+        return "WorkKorotishka{" +
+                "name='" + name + '\'' +
+                ", eye=" + eye +
                 '}';
     }
 

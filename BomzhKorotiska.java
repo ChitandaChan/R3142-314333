@@ -19,32 +19,52 @@ public class BomzhKorotiska implements Witness, Stand {
     public void setSos(Mestoimenie sos) {
         this.sos = sos;
     }
-    public void calculation() {
-        System.out.println("Рассчеты "+getName()+ "a оказались верными");
+
+    public Mestoimenie getSos() {
+        return sos;
     }
 
     public Mestoimenie getEnum() {
     return sos;
 }
-    public void search() {
+    public void search(String sost) {
         switch (sos) {
             case ОНИ:
-                System.out.print(getEnum() + " снова отправились искать работу, но в этот день их ");
+                System.out.print(sost+ " "+ getEnum() + " отпраились искать ");
                 break;
             case ОНА:
-                System.out.println(getEnum() + " снова отправились искать работу, но в этот день её");
+                System.out.println(sost+ " "+ getEnum() + " отпраилась искать  ");
                 break;
             case ОН:
-                System.out.println(getEnum() + " снова отправились искать работу, но в этот день его");
+                System.out.println(sost+ " "+ getEnum() + " отпраился искать  ");
                 break;
             case ОНО:
-                System.out.println(getEnum() + " снова отправились искать работу, но в этот день его");
+                System.out.println(sost+ " "+ getEnum() + " отпраилось искать  ");
                 break;
             case ИМЯ:
-                System.out.println(getName() + " снова отправились искать работу, но в этот день "+ getName());
+                System.out.println(sost+ " "+ getName() + " отпраился искать  ");
                 break;
         }
     }
+        public void Go () {
+            switch (sos) {
+                case ОНИ:
+                    System.out.println(getEnum() + " явились");
+                    break;
+                case ОНА:
+                    System.out.println(getEnum() + " идет сегодня работу");
+                    break;
+                case ОН:
+                    System.out.println(getEnum() + " идет сегодня работу");
+                    break;
+                case ОНО:
+                    System.out.println(getEnum() + " идет сегодня работу");
+                    break;
+                case ИМЯ:
+                    System.out.println(getName() + " идет сегодня работу");
+                    break;
+            }
+        }
         public void see () {
             if (this.eye > 0) {
                 switch (sos) {
@@ -52,16 +72,16 @@ public class BomzhKorotiska implements Witness, Stand {
                         System.out.print(getEnum() + " видят ");
                         break;
                     case ОНА:
-                        System.out.print(getEnum() + " видит ");
+                        System.out.println(getEnum() + " видит");
                         break;
                     case ОН:
-                        System.out.print(getEnum() + " видит ");
+                        System.out.println(getEnum() + " видит");
                         break;
                     case ОНО:
-                        System.out.print(getEnum() + " видит ");
+                        System.out.println(getEnum() + " видит");
                         break;
                     case ИМЯ:
-                        System.out.print(getName() + " видит ");
+                        System.out.println(getName() + " видит");
                         break;
                 }
             }
@@ -89,27 +109,25 @@ public class BomzhKorotiska implements Witness, Stand {
         }
     }
     public void stay() {
-        Mesto mesto = new Mesto(" улицу,где было знакомое увеселительное заведение");
         switch (sos) {
             case ОНИ:
-                System.out.println(getEnum() + " явились" + mesto.mestnost());
+                System.out.print(getEnum() + " явились на");
                 break;
             case ОНА:
-                System.out.println(getEnum() + " явились" + mesto.mestnost());
+                System.out.println(getEnum() + " явилась");
                 break;
             case ОН:
-                System.out.println(getEnum() + " явились" + mesto.mestnost());
+                System.out.println(getEnum() + " явился");
                 break;
             case ОНО:
-                System.out.println(getEnum() + " явились" + mesto.mestnost());
+                System.out.println(getEnum() + " явилось");
                 break;
             case ИМЯ:
-                System.out.println(getName() + " явились" + mesto.mestnost());
+                System.out.println(getName() + " явился");
                 break;
         }
     }
     public  void smile() {
-        Money dengi = new Money();
         switch (sos) {
             case ОНИ:
                 System.out.print(getEnum() + " обрадовались, ");
@@ -128,40 +146,23 @@ public class BomzhKorotiska implements Witness, Stand {
                 break;
         }
 
-        dengi.Up();
     }
-    public void sad() {
-        WorkKorotishka Korotiska;
-        Korotiska = new WorkKorotishka("коротышку", 0, Time.вчерашний );
-        switch (sos) {
-            case ОНИ:
-                System.out.print(getEnum() + " пожалели, "+ Korotiska.getName());
-                break;
-            case ОНА:
-                System.out.print(getEnum() + " пожалела, "+ Korotiska.getName());
-                break;
-            case ОН:
-                System.out.print(getEnum() + " пожалел, "+ Korotiska.getName());
-                break;
-            case ОНО:
-                System.out.print(getEnum() + " пожалело, "+ Korotiska.getName());
-                break;
-            case ИМЯ:
-                System.out.println(getName() + "у было жалко, "+ Korotiska.getName());
-                break;
+    public  void payment(Boolean fidelity) {
+        if (fidelity==true) {
+            System.out.println(" рассчеты "+getName()+" оказались верными");
+        } else {
+            System.out.println(" рассчеты "+getName()+" оказались неверными");
         }
-        }
-    public  void seek() {
-     Search search= new Search("поиски", "не увенчались успехом");
-     search.completed();
     }
-
+    public  void sad() {
+        System.out.print(getName()+ " было жалко ");
+    }
     @Override
     public String toString() {
-        return "БомжКоротышка{" +
-                "имя='" + name + '\'' +
-                ", глаз=" + eye +
-                ", местоимение=" + sos +
+        return "BomzhKorotiska{" +
+                "name='" + name + '\'' +
+                ", eye=" + eye +
+                ", sos=" + sos +
                 '}';
     }
 

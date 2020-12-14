@@ -1,4 +1,3 @@
 public  interface ShotMan {
-    public void shootong();
-    public  void PowerShooting();
+    public void shootong(Boolean power, String time);
 }

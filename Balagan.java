@@ -2,11 +2,9 @@ import java.util.Objects;
 
 public class Balagan {
     public String open, name;
-    private int count;
     public Balagan(String open, String name) {
         this.open=open;
         this.name=name;
-        count =  Count.getCountWorkKorotishka();
     }
     public String Open() {
         return open;
@@ -16,8 +14,7 @@ public class Balagan {
     }
     public void OPEN() {
         if (Open()=="Закрыт") {
-            System.out.print(getName() + " скоро откроется. Можно будет попытаться подзаработать там. ");
-            System.out.println("");
+            System.out.print(getName() + " скоро откроется ");
         } else {
             System.out.println(getName() + Open());
         }
@@ -25,9 +22,9 @@ public class Balagan {
 
     @Override
     public String toString() {
-        return "Балаганчик{" +
-                "открыт='" + open + '\'' +
-                ", имя='" + name + '\'' +
+        return "Balagan{" +
+                "open='" + open + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 
@@ -42,7 +39,6 @@ public class Balagan {
 
     @Override
     public int hashCode() {
-
-        return (count<<2)*(count<<2)-1;
+        return Objects.hash(open, name);
     }
 }
